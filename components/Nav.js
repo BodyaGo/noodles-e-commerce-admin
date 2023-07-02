@@ -1,9 +1,11 @@
 import Link from "next/link";
 
 export default function Nav() {
+  const inactiveLink = " flex gap-1 p-1 ";
+  const activeLink = inactiveLink + " rounded-l-lg text-blue-900 bg-white ";
   return (
-    <aside className="text-white p-4">
-      <Link href={"/"} className="flex gap-1 mb-4">
+    <aside className="text-white p-4 pr-0">
+      <Link href={"/"} className="flex gap-1 mb-4 mr-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -22,7 +24,7 @@ export default function Nav() {
       </Link>
 
       <nav className="flex flex-col gap-2">
-        <Link href={"/"} className="flex gap-1">
+        <Link href={"/"} className={activeLink}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -40,7 +42,7 @@ export default function Nav() {
           Dashboard
         </Link>
 
-        <Link href={"/"} className="flex gap-1">
+        <Link href={"/orders"} className={inactiveLink}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -58,7 +60,7 @@ export default function Nav() {
           Orders
         </Link>
 
-        <Link href={"/"} className="flex gap-1">
+        <Link href={"/products"} className={inactiveLink}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -76,7 +78,7 @@ export default function Nav() {
           Products
         </Link>
 
-        <Link href={"/"} className="flex gap-1">
+        <Link href={"/settings"} className={inactiveLink}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
